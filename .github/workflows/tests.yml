@@ -17,14 +17,10 @@ jobs:
   test-bot:
     strategy:
       matrix:
-        os: [ macos-26 ]
-        include:
-          - os: ubuntu-latest
-            container:
-              image: ghcr.io/homebrew/brew:main
-              options: --privileged
+        # cryo needs macOS 27 and Xcode 27; macos-latest is still macOS 26. No Linux: the
+        # formulae are macOS only.
+        os: [ xcode-27 ]
     runs-on: ${{ matrix.os }}
-    container: ${{ fromJSON(toJSON(matrix.container)) }} # zizmor: ignore[unpinned-images]
     permissions:
       actions: read
       checks: read
