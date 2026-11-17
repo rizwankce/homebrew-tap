@@ -5,6 +5,7 @@ class Cryo < Formula
   sha256 "ad89ee7a7a35b0c3f0027400bdf55b6980fa6e51c7d61cbb2cd47be38829d85c"
   license "Apache-2.0"
   head "https://github.com/rizwankce/cryo.git", branch: "main"
+  # Bottles are built by this tap's CI on macOS 27 and published with `brew pr-pull`.
 
   # Package.swift targets macOS 27 and builds with Swift 6 from Xcode 27.
   depends_on xcode: ["27.0", :build]

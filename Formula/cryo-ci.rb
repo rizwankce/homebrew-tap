@@ -5,6 +5,7 @@ class CryoCi < Formula
   sha256 "b16bfd891fb48ca5ca5bcd19c41dbac3af72396a87f3078ef676d65d4d1ec3e9"
   license "Apache-2.0"
   head "https://github.com/rizwankce/cryo-ci.git", branch: "main"
+  # Bottles are built by this tap's CI on macOS 27 and published with `brew pr-pull`.
 
   depends_on xcode: ["27.0", :build]
   depends_on arch: :arm64
