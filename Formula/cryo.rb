@@ -1,8 +1,8 @@
 class Cryo < Formula
   desc "Clean, isolated macOS VMs on your own Macs, thawed in seconds"
   homepage "https://github.com/rizwankce/cryo"
-  url "https://github.com/rizwankce/cryo/releases/download/v0.1.0/cryo-0.1.0.tar.gz"
-  sha256 "ad89ee7a7a35b0c3f0027400bdf55b6980fa6e51c7d61cbb2cd47be38829d85c"
+  url "https://github.com/rizwankce/cryo/releases/download/v0.1.1/cryo-0.1.1.tar.gz"
+  sha256 "cb3e040b8ead8728fb60efcc40ab7d6f98685638e05e2c55fdf3cb88a8dd6eff"
   license "Apache-2.0"
   head "https://github.com/rizwankce/cryo.git", branch: "main"
   # Bottles are built by this tap's CI on macOS 27 and published with `brew pr-pull`.
