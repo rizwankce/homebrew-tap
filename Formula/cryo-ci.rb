@@ -7,6 +7,12 @@ class CryoCi < Formula
   head "https://github.com/rizwankce/cryo-ci.git", branch: "main"
   # Bottles are built by this tap's CI on macOS 27 and published with `brew pr-pull`.
 
+  bottle do
+    root_url "https://github.com/rizwankce/homebrew-tap/releases/download/cryo-ci-0.1.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7bdd7c98e3647b2803f34dbc00d334a24e820863391c92bd86ea32d1a3a46943"
+  end
+
   depends_on xcode: ["27.0", :build]
   depends_on arch: :arm64
   depends_on macos: :golden_gate
