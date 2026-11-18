@@ -9,7 +9,8 @@ class Cryo < Formula
 
   bottle do
     root_url "https://github.com/rizwankce/homebrew-tap/releases/download/cryo-0.1.2"
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "19c8019827aa6a248db1d4c256fe64534d22f2c860a6c18c2c9a81a0c588a6b1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d9313aef25e863a2650b8b008d5930fa7ef492474ed080734f26c6c46054cc60"
   end
 
   # Package.swift targets macOS 27 and builds with Swift 6 from Xcode 27.
