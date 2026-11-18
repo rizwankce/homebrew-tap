@@ -1,16 +1,11 @@
 class Cryo < Formula
   desc "Clean, isolated macOS VMs on your own Macs, thawed in seconds"
   homepage "https://github.com/rizwankce/cryo"
-  url "https://github.com/rizwankce/cryo/releases/download/v0.1.3/cryo-0.1.3.tar.gz"
-  sha256 "bcc325c1acc48505792f2c8c170b26ce20533756a462f19504e4b4826e173d55"
+  url "https://github.com/rizwankce/cryo/releases/download/v0.2.0/cryo-0.2.0.tar.gz"
+  sha256 "82e8585f6cbba435c47f100b93196c71f395b3058c81a7f9de443a0eb30f8fcc"
   license "Apache-2.0"
   head "https://github.com/rizwankce/cryo.git", branch: "main"
   # Bottles are built by this tap's CI on macOS 27 and published with `brew pr-pull`.
-
-  bottle do
-    root_url "https://github.com/rizwankce/homebrew-tap/releases/download/cryo-0.1.3"
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b49299bceff76fb62ce40b5d29225557404b7ecb51a9cb1bb2e82d72b6af4a47"
-  end
 
   # Package.swift targets macOS 27 and builds with Swift 6 from Xcode 27.
   depends_on xcode: ["27.0", :build]
