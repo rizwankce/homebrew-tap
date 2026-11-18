@@ -1,17 +1,11 @@
 class CryoCi < Formula
   desc "Run GitHub Actions jobs on clean macOS VMs from a cryo bay"
   homepage "https://github.com/rizwankce/cryo-ci"
-  url "https://github.com/rizwankce/cryo-ci/releases/download/v0.1.0/cryo-ci-0.1.0.tar.gz"
-  sha256 "b16bfd891fb48ca5ca5bcd19c41dbac3af72396a87f3078ef676d65d4d1ec3e9"
+  url "https://github.com/rizwankce/cryo-ci/releases/download/v0.1.1/cryo-ci-0.1.1.tar.gz"
+  sha256 "f0836c20fb27a8ad7d1d8d55432739830d1e9b909b8f1e8a05faddf0758eb1f4"
   license "Apache-2.0"
   head "https://github.com/rizwankce/cryo-ci.git", branch: "main"
   # Bottles are built by this tap's CI on macOS 27 and published with `brew pr-pull`.
-
-  bottle do
-    root_url "https://github.com/rizwankce/homebrew-tap/releases/download/cryo-ci-0.1.0"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7bdd7c98e3647b2803f34dbc00d334a24e820863391c92bd86ea32d1a3a46943"
-  end
 
   depends_on xcode: ["27.0", :build]
   depends_on arch: :arm64
