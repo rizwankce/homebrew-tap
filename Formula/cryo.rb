@@ -23,6 +23,8 @@ class Cryo < Formula
     system "codesign", "--force", "--sign", "-", "--entitlements", "scripts/cryo.entitlements",
            ".build/release/cryo"
     bin.install ".build/release/cryo"
+    # The agent skill, so `cryo` users can hand it to Claude Code without fetching it by hand.
+    pkgshare.install "skills"
   end
 
   def caveats
@@ -35,11 +37,14 @@ class Cryo < Formula
       The LaunchAgents run #{opt_bin}/cryo, so they survive `brew upgrade cryo`. A running
       bay keeps the old version until it restarts; to restart it now:
         launchctl kickstart -k gui/$(id -u)/dev.rizwan.cryo.bay
+      To teach Claude Code how to use cryo, link the agent skill:
+        mkdir -p ~/.claude/skills && ln -s #{opt_pkgshare}/skills/cryo ~/.claude/skills/cryo
       Remove with `cryo bay uninstall` before `brew uninstall cryo`.
     EOS
   end
 
   test do
+    assert_path_exists pkgshare/"skills/cryo/SKILL.md"
     assert_match version.to_s, shell_output("#{bin}/cryo version")
     assert_match "com.apple.security.virtualization",
                  shell_output("codesign -d --entitlements - #{bin}/cryo 2>&1")
